@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Black & White & Yellow Theme */
+    --background: 240 10% 3%; /* Near Black */
+    --foreground: 0 0% 98%; /* Almost White */
+
+    --card: 240 8% 8%; /* Dark Gray/Black */
+    --card-foreground: 0 0% 95%; /* Light Gray/White */
+
+    --popover: 240 10% 4%; /* Near Black */
+    --popover-foreground: 0 0% 95%; /* Light Gray/White */
+
+    --primary: 50 100% 50%; /* Bright Yellow */
+    --primary-foreground: 240 10% 5%; /* Dark for contrast on yellow */
+
+    --secondary: 240 5% 20%; /* Medium Dark Gray */
+    --secondary-foreground: 0 0% 90%; /* Lighter Gray */
+
+    --muted: 240 5% 12%; /* Dark Gray */
+    --muted-foreground: 0 0% 60%; /* Medium Gray */
+
+    --accent: 50 100% 50%; /* Solid Yellow for hover/focus accents */
+    --accent-foreground: 50 100% 55%; /* Slightly darker Yellow for text on accent */
+
+    --destructive: 0 84.2% 60.2%; /* Default Red - Keep for errors */
+    --destructive-foreground: 0 0% 98%; /* Almost White */
+
+    --border: 240 5% 18%; /* Dark Gray Border */
+    --input: 240 5% 10%; /* Dark Gray Input */
+    --ring: 50 100% 55%; /* Yellow for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Chart colors using Yellow and Grays */
+    --chart-1: 50 100% 50%; /* Yellow */
+    --chart-2: 0 0% 70%;   /* Light Gray */
+    --chart-3: 0 0% 50%;   /* Medium Gray */
+    --chart-4: 0 0% 90%;   /* Very Light Gray */
+    --chart-5: 0 0% 30%;   /* Dark Gray */
+
+    /* Sidebar colors aligned with the theme */
+    --sidebar-background: 240 10% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 50 100% 50%;
+    --sidebar-primary-foreground: 240 10% 5%;
+    --sidebar-accent: 50 100% 50% / 0.1;
+    --sidebar-accent-foreground: 50 100% 55%;
+    --sidebar-border: 240 5% 15%;
+    --sidebar-ring: 50 100% 55%;
+  }
+
+  /* Keep the .dark class selector */
+  .dark {
+     /* Black & White & Yellow Theme */
+    --background: 240 10% 3%; /* Near Black */
+    --foreground: 0 0% 98%; /* Almost White */
+
+    --card: 240 8% 8%; /* Dark Gray/Black */
+    --card-foreground: 0 0% 95%; /* Light Gray/White */
+
+    --popover: 240 10% 4%; /* Near Black */
+    --popover-foreground: 0 0% 95%; /* Light Gray/White */
+
+    --primary: 50 100% 50%; /* Bright Yellow */
+    --primary-foreground: 240 10% 5%; /* Dark for contrast on yellow */
+
+    --secondary: 240 5% 20%; /* Medium Dark Gray */
+    --secondary-foreground: 0 0% 90%; /* Lighter Gray */
+
+    --muted: 240 5% 12%; /* Dark Gray */
+    --muted-foreground: 0 0% 60%; /* Medium Gray */
+
+    --accent: 50 100% 50%; /* Solid Yellow for hover/focus accents */
+    --accent-foreground: 50 100% 55%; /* Slightly darker Yellow for text on accent */
+
+    --destructive: 0 62.8% 30.6%; /* Darker Red */
+    --destructive-foreground: 0 0% 98%; /* Almost White */
+
+    --border: 240 5% 18%; /* Dark Gray Border */
+    --input: 240 5% 10%; /* Dark Gray Input */
+    --ring: 50 100% 55%; /* Yellow for focus rings */
+
+    /* Chart colors using Yellow and Grays */
+    --chart-1: 50 100% 50%; /* Yellow */
+    --chart-2: 0 0% 70%;   /* Light Gray */
+    --chart-3: 0 0% 50%;   /* Medium Gray */
+    --chart-4: 0 0% 90%;   /* Very Light Gray */
+    --chart-5: 0 0% 30%;   /* Dark Gray */
+
+    /* Sidebar colors aligned with the theme */
+    --sidebar-background: 240 10% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 50 100% 50%;
+    --sidebar-primary-foreground: 240 10% 5%;
+    --sidebar-accent: 50 100% 50% / 0.1;
+    --sidebar-accent-foreground: 50 100% 55%;
+    --sidebar-border: 240 5% 15%;
+    --sidebar-ring: 50 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  /* Add smooth scrolling behavior */
+  html {
+    scroll-behavior: smooth;
+   }
+}
+
+/* Define animation for background image */
+@keyframes background-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Apply background image to hero section */
+.hero-bg {
+  /* Placeholder background image URL */
+  /* Replace with your desired futuristic background image */
+  background-image: url('https://picsum.photos/seed/tech/1920/1080');
+  background-size: cover; /* Cover the entire section */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat;
+  /* Optional: Add a subtle panning animation */
+  /* animation: background-pan 30s linear infinite alternate; */
+}
+
+/* Add overlay for text contrast */
+.hero-overlay {
+  /* Gradient from slightly transparent dark at the top to more opaque at the bottom */
+   background: linear-gradient(180deg, hsla(var(--background) / 0.2) 0%, hsla(var(--background) / 0.7) 70%, hsl(var(--background)) 100%);
+}
